@@ -1,0 +1,59 @@
+#RegBody{
+    background-image: url("/Public/Home/css/bg.jpg");
+    background-repeat: no-repeat;
+   background-origin: border-box;
+   background-size: cover;
+}
+.row{
+
+    background-size:contain;
+
+}
+.form-sign{
+    background-color: rgba(0, 3, 3, 0.67);
+    width: 370px;
+    padding-left: 70px;
+    position: fixed;
+
+}
+
+.form-group{
+    position: relative;
+
+
+
+}
+.input-group{
+    display: table;
+    position: relative;
+    border-collapse: separate;
+    width: 75%;
+}
+.btn-block{
+    width: 25%;
+}
+.sign-container{
+    position: fixed;
+    padding-left: 30%;
+    padding-top: 5%;
+    padding-right: 30%;
+}
+.fa{
+    display: inline-block;
+
+}
+.fa-fw{
+    width: 1.3em;
+    text-align: center;
+
+}
+.btn-block{
+    width: 75%;
+}
+
+.btn-block{
+    width: 75%;
+}
+.form-sign-heading{
+    padding-left: 60px;
+}

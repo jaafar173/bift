@@ -1,0 +1,6 @@
+[ 2015-03-10T19:24:50+08:00 ] 127.0.0.1 /blog.php
+ERR: Think\Controller:_initialize方法不存在！
+
+[ 2015-03-10T19:25:31+08:00 ] 127.0.0.1 /blog.php
+ERR: Think\Model:getPage方法不存在！
+

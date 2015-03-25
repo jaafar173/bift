@@ -1,0 +1,42 @@
+<extend name="Base/base" />
+<block name="body">
+    <ul class="breadcrumb">
+        <li><a href="/"><i class="fa fa-home"></i></a></li>
+        <li>{$item.name}</li>
+    </ul>
+    <div class="row">
+        <div class="col-md-9 col-xs-12" id="main-content">
+            <h3><a href="{:U('Blog/detail', array('id'=>$item['id']))}">{$item.name}</a></h3>
+            <ul class="list-unstyled list-inline">
+                <li><i class="fa fa-calendar color-theme margin-right-10"></i>{$item.create_time}</li>
+                <li><i class="fa fa-eye color-theme margin-right-10"></i>{$item.view_count}</li>
+                <li>
+                    <i class="fa fa-share-square color-theme margin-right-10"></i>
+                    <div class="addthis_sharing_toolbox pull-right"></div>
+                </li>
+            </ul>
+            <notempty name="item.tags">
+                <p><i class="fa fa-tags color-theme margin-right-10"></i>
+                    <volist name="item['tags']" id="tag">
+                        <span class="label label-info margin-right-5">{$tag}</span>
+                    </volist>
+                </p>
+            </notempty>
+            <p>{$item.content}</p>
+        </div>
+        <div class="col-md-3" id="sidebar">
+            <div class="text-center headline">
+                <h3>Please follow us!</h3>
+            </div>
+            <img class="img-responsive" src="__STATIC__/img/wechat_guideinchina.jpg" />
+            <div class="headline">
+                <h3>Recent Articles</h3>
+            </div>
+            <ul class="list-unstyled">
+                <volist name="newest" id="item">
+                    <li><a href="{:U('Blog/detail', array('id'=>$item['id']))}">{$item.name}</a></li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+</block>

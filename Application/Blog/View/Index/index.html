@@ -1,0 +1,47 @@
+<extend name="Base/base" />
+<block name="body">
+    <div class="row">
+        <div class="col-md-9 col-xs-12" id="main-content">
+            <volist name="items" id="item">
+                <div class="media">
+                    <a class="media-left" href="{:U('blog/detail', array('id'=>$item['id']))}">
+                        <img style="width: 300px" src="{$item.cover}">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="{:U('blog/detail', array('id'=>$item['id']))}">{$item.name}</a></h4>
+                        <ul class="list-unstyled list-inline">
+                            <li><i class="fa fa-calendar color-theme margin-right-10"></i>{$item.update_time|date='Y-m-d H:i', ###}</li>
+                            <li><i class="fa fa-eye color-theme margin-right-10"></i>{$item.view_count}</li>
+                        </ul>
+                        <p>{$item.description}</p>
+                        <notempty name="item.tags">
+                            <p><i class="fa fa-tags color-theme margin-right-10"></i>
+                                <volist name="item['tags']" id="tag">
+                                    <span class="label label-info margin-right-5">{$tag}</span>
+                                </volist>
+                            </p>
+                        </notempty>
+                    </div>
+                </div>
+                <hr>
+            </volist>
+            <div class="text-center" id="pagination">
+                {$pagination}
+            </div>
+        </div>
+        <div class="col-md-3" id="sidebar">
+            <div class="text-center headline">
+                <h3>Please follow us!</h3>
+            </div>
+            <img class="img-responsive" src="__STATIC__/img/wechat_guideinchina.jpg" />
+            <div class="headline">
+                <h3>Recent Articles</h3>
+            </div>
+            <ul class="list-unstyled">
+                <volist name="newest" id="item">
+                    <li><a href="{:U('Blog/detail', array('id'=>$item['id']))}">{$item.name}</a></li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+</block>

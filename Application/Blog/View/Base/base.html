@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>{$title}</title>
+    <link rel="icon" href="__STATIC__/img/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Seo 标签  -->
+    <meta name="keywords" content="{$keywords}">
+    <meta name="description" content="{$description}">
+    <!-- CSS Global Compulsory-->
+    <link rel="stylesheet" href="__STATIC__/plugins/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="__STATIC__/plugins/font-awesome/css/font-awesome.min.css">
+    <!-- CSS Theme -->
+</head>
+<body>
+<!-- 头部 -->
+<include file="Base/header"/>
+<!-- /头部 -->
+<block name="focus"></block>
+<!-- 主体 -->
+<div id="page-container">
+    <div class="container">
+        <block name="body"></block>
+    </div>
+</div>
+<!-- /主体 -->
+<!-- 底部 -->
+<include file="Base/footer"/>
+<div id="feedback" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title text-center">Your Advice and Questions</h3>
+            </div>
+            <div class="modal-body text-center">
+                <p>Your feedback is extremely important to us – it helps us improve the site!</p>
+                <p>The data collected is not tied to any personally identifiable data that may have been previously provided to us. All data are only for our internal use by HiredChina.</p>
+                <h4 class="text-center">Thank you for your valuable feedback!</h4>
+                <hr>
+                <form id="feedbackForm" class="form-horizontal" method="post" action="{:U('index/feedback@www')}" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="" name="username" value="{$user.username}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" placeholder="" name="email" value="{$user.email}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Message</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" name="content" placeholder="Advice, questions etc." rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-2 col-sm-offset-2">
+                            <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center">If you have an urgent question, please email <span class="color-light-red">info@hiredchina.com!</span></p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- /底部 -->
+<!--[if lt IE 9]>
+<script src="__STATIC__/plugins/jquery-1.11.1.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="__STATIC__/plugins/jquery-2.1.1.min.js"></script>
+<!--<![endif]-->
+<script src="__STATIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="__STATIC__/plugins/jquery-validation/jquery.validate.js"></script>
+<script src="__STATIC__/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5486ae331dae0ef3" async="async"></script>
+<script type="text/javascript">
+    $().ready(function() {
+        // validate signup form on keyup and submit
+        $("#feedbackForm").validate({
+            rules: {
+                name: {
+                    required: true,
+                    maxlength: 100
+                },
+                email: {
+                    required: true,
+                    maxlength: 100,
+                    email:true
+                },
+                content: {
+                    required: true,
+                    minlength: 10
+                }
+            }
+        });
+    });
+    // 百度统计代码
+//    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+//    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F018db1541765eb8e16c8f0da9c174ee8' type='text/javascript'%3E%3C/script%3E"));
+//    // google analytics
+//    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+//        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+//            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+//    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+//
+//    ga('create', 'UA-56511619-1', 'auto');
+//    ga('require', 'displayfeatures');
+//    ga('send', 'pageview');
+</script>
+</body>
+</html>

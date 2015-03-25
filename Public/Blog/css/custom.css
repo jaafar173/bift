@@ -1,0 +1,70 @@
+a {
+    color: #666;
+}
+/* pre-footer */
+#pre-footer {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+#pre-footer #wechat li:first-child {
+    margin-right: 130px;
+}
+
+#main-content {
+    border-right: 1px solid #ccc;
+}
+
+#sidebar li {
+    font-size: 14px;
+    border-left: 2px solid #096;
+    margin-top: 10px;
+    padding-left: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+
+/*  footer  */
+#footer {
+    font-size: 16px;
+    border-top: 1px solid #fff;
+    background-color: #f0f0f0;
+    padding-top: 3px;
+}
+
+#footer #social-media {
+    font-size: 20px;
+}
+
+#footer #social-media ul{
+    margin-bottom: 3px;
+}
+.navbar-brand {
+    font-size: 28px;
+    padding-left: 40px;
+}
+
+#page-container p img {
+    display: block;
+    max-width: 95%;
+    height: auto;
+}
+
+.headline {
+    display: block;
+    margin: 10px 0 5px 0;
+    border-bottom: 1px dotted #e4e9f0;
+}
+
+.headline h2,
+.headline h3,
+.headline h4 {
+    color: #585f69;
+    margin: 0 0 -2px 0;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom: 2px solid #72c02c;
+}
